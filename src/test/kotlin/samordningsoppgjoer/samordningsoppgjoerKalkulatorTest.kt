@@ -11,7 +11,8 @@ import org.junit.platform.suite.api.*
     ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "samordningsoppgjoer"),
     ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME, value = "not @Wip"),
     ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty"),
-    ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "html:target/cucumber/index.html")
+    ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "html:target/cucumber/index.html"),
+    ConfigurationParameter(key = "cucumber.language", value = "no"),
 )
 class samordningsoppgjoerKalkulatorTest {
 }

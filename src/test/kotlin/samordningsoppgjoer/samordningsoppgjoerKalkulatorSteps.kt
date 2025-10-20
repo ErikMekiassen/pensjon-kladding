@@ -4,9 +4,9 @@ package samordningsoppgjoer
 import com.google.inject.Inject
 import io.cucumber.java.After
 import io.cucumber.java.Before
-import io.cucumber.java.en.Given
-import io.cucumber.java.en.Then
-import io.cucumber.java.en.When
+import io.cucumber.java.no.Gitt
+import io.cucumber.java.no.Så
+import io.cucumber.java.no.Når
 import org.junit.jupiter.api.Assertions.assertEquals
 import java.math.BigInteger
 import io.cucumber.java.Scenario
@@ -27,29 +27,29 @@ class SamordningsoppgjoerKalkulatorSteps @Inject constructor(private val samordn
     @After
     fun tearDownScenario(scenario: Scenario) = log.info("After scenario: {}", scenario.name)
 
-    @Given("garantipensjonsnivå er {int}")
+    @Gitt("garantipensjonsnivå er {int}")
     fun setGarantipensjonsnivaa(value: Int) {
         garantiPensjonsnivaa = BigInteger.valueOf(value.toLong())
     }
 
-    @Given("trygdetid er {int}")
+    @Gitt("trygdetid er {int}")
     fun setTrygdeTid(value: Int) {
         trygdeTid = BigInteger.valueOf(value.toLong())
     }
 
-    @Given("pensjonsbeholdning er {int}")
+    @Gitt("pensjonsbeholdning er {int}")
     fun setPensjonsbeholdning(value: Int) {
         pensjonsbeholdning = BigInteger.valueOf(value.toLong())
     }
 
-    @When("jeg beregner pensjonen")
+    @Når("jeg beregner pensjonen")
     fun calculatePensjon() {
         kalkulator = SamordningsoppgjoerKalkulator()
         println("ahduheasf " + kalkulator.beregnPensjon(garantiPensjonsnivaa, trygdeTid, pensjonsbeholdning))
         resultat = kalkulator.beregnPensjon(garantiPensjonsnivaa, trygdeTid, pensjonsbeholdning)
     }
 
-    @Then("resultatet skal være {double}")
+    @Så("resultatet skal være {double}")
     fun verifyResult(expected: Double) {
         assertEquals(0, resultat.toInt())
     }
